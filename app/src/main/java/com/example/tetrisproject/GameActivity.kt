@@ -1,5 +1,6 @@
 package com.example.tetrisproject
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,11 +20,19 @@ class GameActivity : AppCompatActivity() {
         appPreferences = AppPreferences(this)
 
         val btnRestart = findViewById<Button>(R.id.btn_restart)
+        val btnBackToStart = findViewById<Button>(R.id.btn_back_to_start)
         tvHighScore = findViewById<TextView>(R.id.tv_high_score)
         tvCurrentScore = findViewById<TextView>(R.id.tv_current_score)
 
+        btnBackToStart.setOnClickListener(this::onBackToStartClick)
+
         updateHighScore()
         updateCurrentScore()
+    }
+
+    private fun onBackToStartClick(view: View){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     private fun updateCurrentScore(){

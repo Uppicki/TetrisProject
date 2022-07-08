@@ -65,6 +65,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btn_restart"/>
 
+            <Button
+                android:id="@+id/btn_back_to_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"/>
+
         </LinearLayout>
 
         <View
